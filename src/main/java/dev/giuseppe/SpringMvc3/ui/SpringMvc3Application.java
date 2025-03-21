@@ -12,7 +12,7 @@ import org.springframework.web.filter.HiddenHttpMethodFilter;
 import dev.giuseppe.SpringMvc3.service.UtenteService;
 
 
-@SpringBootApplication(scanBasePackages = { "dev.giuseppe.SpringMvc3.controller" , "dev.giuseppe.SpringMvc3.service"})
+@SpringBootApplication(scanBasePackages = { "dev.giuseppe.SpringMvc3.controller" , "dev.giuseppe.SpringMvc3.service",  "dev.giuseppe.SpringMvc3.rest"})
 @EnableJpaRepositories( basePackages = { "dev.giuseppe.SpringMvc3.repository" })
 @EntityScan( basePackages = { "dev.giuseppe.SpringMvc3.model" })
 public class SpringMvc3Application {
@@ -24,7 +24,4 @@ public class SpringMvc3Application {
         utenteService.createUsersIfNotPresent();
     }
 
-    public void addViewControllers(ViewControllerRegistry registry) {
-        registry.addViewController("/").setViewName("index");
-    }
 }
